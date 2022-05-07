@@ -61,14 +61,14 @@ function App() {
 			<Nav />
 			
 			<select onClick={ handleFilter }>
-				<option value='all'>Filter Greased</option>
+				<option value='all'>All greased </option>
 				<option value="greased">Greased</option>
 				<option value = "nn">Not Greased</option>
 
 			</select>
 
 			<select onClick={ handleFilterName }>
-				<option value= "all">Filter Name</option>
+				<option value= "all">By Name</option>
 				{hogName}
 			</select>
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Hogs({ name, image, weight, medal, greased, specialty}){
+function Hogs({ name, image, weight, medal, greased, specialty, id}){
 
   const [display, setdisplay] = useState(true)
 
@@ -10,7 +10,7 @@ function Hogs({ name, image, weight, medal, greased, specialty}){
     setdisplay(display => !display)
   }
   return (
-    <div className="Hero" onClick={handleInfo}>
+    <div className="Hero" onClick={handleInfo} key = {id}>
       <h4>{name}</h4>
       <img src = {image} className = "image" alt = "Alt mage" />
       <div className = { classTart }>
