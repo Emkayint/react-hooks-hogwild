@@ -159,3 +159,11 @@ ul {
 .hero{
   display: inline;
 }
+
+.none{
+  display: none;
+}
+
+.block{
+  display: block;
+}
