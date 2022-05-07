@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "./Nav";
 import Hogs from "./Hogs";
-
+import NamesFilter from "./NamesFilter";
 import hogs from "../porkers_data";
 import { useState } from "react";
 
@@ -26,14 +26,22 @@ function App() {
 		}
 	}) 
 	function handleFilter(event){
-		setfilterBy(event.target.value === 'greased' ? true : false)
+		setfilterBy(filterBy => {
+			if(event.target.value === "all"){
+				return filterBy = 'all'
+			} else if(event.target.value === 'greased'){
+				return filterBy = true
+			} else {
+				return filterBy = false
+			}
+		})
 	}
 
 	function handleFilterName(event){
-		setfilterBy(filterByName => filterByName = event.target.value)
+		setfilterByName(filterByName => filterByName = event.target.value)
 	}
 
-	const hogLings = hogToDisplay.map( hog => (
+	const hogLings = hogToDisplayName.map( hog => (
 		<Hogs 
 			name = {hog.name}
 			image = {hog.image}
@@ -44,17 +52,24 @@ function App() {
 		/>
 	))
 
+	const hogName = hogs.map(hog => (
+		<NamesFilter name = {hog.name} />
+	))
+
 	return (
 		<div className="App">
 			<Nav />
 			
 			<select onClick={ handleFilter }>
-				<option value='all'>Filter</option>
-				<option value="greased"></option>
+				<option value='all'>Filter Greased</option>
+				<option value="greased">Greased</option>
+				<option value = "nn">Not Greased</option>
+
 			</select>
 
 			<select onClick={ handleFilterName }>
-				
+				<option value= "all">Filter Name</option>
+				{hogName}
 			</select>
 
 
