@@ -1,15 +1,16 @@
 
-function Hogs({hogs, name, image, weight, medal, greased}){
+function Hogs({ name, image, weight, medal, greased, specialty}){
 
 
   return (
     <div className="Hero">
       <h4>{name}</h4>
-      <img src = {image} alt = "Alt mage" />
+      <img src = {image} className = "image" alt = "Alt mage" />
       <div className =''>
-        <li>{ weight }</li>
-        <li>{ greased ? "Greased" : "Not Greased" }</li>
-        <li> { medal }</li>
+        <p>Specialty :{ specialty }</p>
+        <p>Weight :{ weight }</p>
+        <p>{ greased ? "Greased" : "Not Greased" }</p>
+        <p>highest medal achieved: { medal }</p>
       </div>
     </div>
   )

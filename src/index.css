@@ -150,3 +150,12 @@ ul {
     transform: rotate(360deg);
   }
 }
+
+.image{
+  width: 300px;
+  height: auto;
+}
+
+.hero{
+  display: inline;
+}
