@@ -4,7 +4,7 @@ function Hogs({ name, image, weight, medal, greased, specialty}){
 
   const [display, setdisplay] = useState(true)
 
-  const classTart = display ? "none" : "block"
+  const classTart = display ? "none" : "block";
 
   function handleInfo(){
     setdisplay(display => !display)
